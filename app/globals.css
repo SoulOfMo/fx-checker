@@ -2,14 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +12,48 @@
   }
 }
 
+@theme {
+  --background: var(--background);
+  --foreground: var(--foreground);
+
+  --color-neutral-50: #ffffff;
+  --color-neutral-100: #c6c6c6;
+  --color-neutral-200: #9d9d9d;
+  --color-neutral-300: #454547;
+  --color-neutral-400: #3d3d3d;
+  --color-neutral-500: #2e2e2e;
+  --color-neutral-600: #202022;
+  --color-neutral-700: #171719;
+  --color-neutral-900: #0a0a0a;
+  --color-lime-500: #cef739;
+  --color-lime-800: #283300;
+  --color-green-500: #42eb05;
+  --color-red-500: #ff4141;
+
+  --text-xxs: 0.625rem;
+
+  --breakpoint-phone: 25rem;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+
+  --animate-marquee: marquee 35s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

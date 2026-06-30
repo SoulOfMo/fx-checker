@@ -1,65 +1,147 @@
-import Image from "next/image";
+import Calculator from "./_components/Calculator";
+import Header from "./_components/Header";
+import Marquee from "./_components/Marquee";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main>
+      <Header />
+      <Marquee />
+      <Calculator />
+    </main>
   );
 }
+
+// <!--
+//   This file holds the static written content from the design so you don't have to
+//   retype it. It is intentionally unstructured — building the HTML is your job.
+
+//   Notes labelled "Dynamic:" mark content pulled in with JavaScript — live exchange
+//   rates, or the pairs and conversions you save in the browser. Text in [square
+//   brackets] is a live value that sits inside otherwise-static copy.
+
+//   Labels are written in normal case even though the design shows many of them in
+//   uppercase. Apply that uppercase look with CSS (text-transform: uppercase) rather
+//   than capital letters in the markup — all-caps text can be read out awkwardly by
+//   some screen readers. Acronyms and codes (FX, EOD, ECB, USD, EUR…) stay as-is.
+// -->
+
+// <!-- Header -->
+
+// <!-- Brand logo — assets/images/logo.svg (the lockup already includes the "FX_CHECKER" wordmark; use alt="FX Checker") -->
+
+// <!-- Dynamic: number of available currencies, e.g. "55" -->
+// Currencies · EOD · ECB data
+
+// <!-- Live markets ticker — auto-scrolls across the page, pauses on hover -->
+
+// Live markets
+
+// <!-- Dynamic: scrolling list of currency pairs, each with its rate and 24h change (▲ up / ▼ down) -->
+
+// <!-- Converter -->
+
+// Check the rate
+
+// Send
+// <!-- Dynamic: amount to convert (number input, defaults to 1,000) -->
+// <!-- Dynamic: selected "send" currency — flag + code; opens the currency picker -->
+
+// <!-- Swap the send and receive currencies (icon button) -->
+
+// Receive
+// <!-- Dynamic: converted amount -->
+// <!-- Dynamic: selected "receive" currency — flag + code; opens the currency picker -->
+
+// <!-- Dynamic: exchange rate for the active pair, e.g. "1 USD = 0.8530 EUR" -->
+
+// <!-- Favorite toggle for the active pair — reads "Favorite" when unpinned, "Favorited" when pinned -->
+// Favorite
+// Favorited
+
+// Log conversion
+
+// <!-- Currency picker — popover opened from either currency button -->
+
+// Search currencies...
+
+// Popular
+// <!-- Dynamic: number of popular currencies -->
+// <!-- Dynamic: popular currencies, each row: flag, code, name (a checkmark marks the selected one) -->
+
+// Other currencies
+// <!-- Dynamic: number of other currencies -->
+// <!-- Dynamic: every other currency, each row: flag, code, name -->
+
+// <!-- Dynamic: while searching, the list filters to the currencies matching the query -->
+
+// <!-- Tabs — collapse into a dropdown on mobile -->
+
+// History
+// Compare
+// Favorites
+// <!-- Dynamic: number of favorited pairs (badge) -->
+// Log
+// <!-- Dynamic: number of logged conversions (badge) -->
+
+// <!-- Tab panel: History (default tab) -->
+
+// Open
+// <!-- Dynamic: opening rate for the selected range -->
+// Last
+// <!-- Dynamic: latest rate -->
+// Change
+// <!-- Dynamic: change over the range (signed; positive green, negative red) -->
+// % change
+// <!-- Dynamic: percentage change over the range (▲/▼; positive green, negative red) -->
+
+// <!-- Date range selector -->
+// 1d
+// 1w
+// 1m
+// 3m
+// 1y
+// 5y
+
+// <!-- Dynamic: active pair, e.g. "USD/EUR" -->
+// <!-- Dynamic: latest rate and timestamp, e.g. "0.8530 · May 14 16:00 CET" -->
+// <!-- Dynamic: line + area chart of the pair's rate history, with Y-axis (high/mid/low) and X-axis date labels -->
+
+// <!-- History empty / error state -->
+// No chart data available
+// We couldn't load rate history for [pair] right now. This usually clears up in a minute.
+
+// <!-- Tab panel: Compare -->
+
+// Multi-currency
+// <!-- Dynamic: send amount and base currency, e.g. "1,000 from USD" -->
+// <!-- Dynamic: number of comparison rows, e.g. "8 pairs" -->
+
+// <!-- Dynamic: one row per currency, each: flag, code, name, converted amount, reference rate (e.g. "@ 0.7366"), and a star to pin/unpin -->
+
+// <!-- Compare empty state -->
+// No comparison available
+// Enter an amount in Send above to see what your money is worth in other currencies.
+
+// <!-- Tab panel: Favorites (pinned pairs, saved in the browser) -->
+
+// Pinned pairs
+// <!-- Dynamic: number of pinned pairs, e.g. "10 favorites" -->
+
+// <!-- Dynamic: one row per pinned pair, each: pair (e.g. "USD → EUR"), live rate, 24h change %, and a filled star to unpin -->
+
+// <!-- Favorites empty state -->
+// No pinned pairs yet
+// Pin a pair to track its rate here. Tap the star icon on any conversion or comparison row.
+
+// <!-- Tab panel: Log (conversion history, saved in the browser) -->
+
+// Conversion log
+// <!-- Dynamic: number of logged conversions, e.g. "8 logged" -->
+// Clear all
+
+// <!-- Dynamic: one row per logged conversion, each: relative time (e.g. "20m", "1h", "13 May"), pair, send amount, receive amount, and a delete button -->
+
+// <!-- Log empty state -->
+// No conversions logged yet
+// Every conversion is recorded here automatically when you tap Log conversion. Your log is private to this session and this browser.
