@@ -8,10 +8,10 @@ export default function DetailsContainer() {
   return (
     <div className="flex gap-5 mt-8 flex-col">
       <TabsContainer />
-      {/* <History /> */}
-      {/* <CompareContainer /> */}
-      {/* <FavoritesContainer /> */}
-      <Logs />
+      <History />
+      {/* <CompareContainer />
+      <FavoritesContainer />
+      <Logs /> */}
     </div>
   );
 }
