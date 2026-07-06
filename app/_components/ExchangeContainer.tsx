@@ -28,7 +28,7 @@ export default function ExchangeContainer({
               className="rounded-full"
             />
           </span>
-          <span className="uppercase tracking-[1px] text-sm">{code}</span>
+          <span className="uppercase tracking-normal text-sm">{code}</span>
           <span className="w-3 h-3">
             <Image src={carretDown} width={20} height={20} alt="carret down" />
           </span>
