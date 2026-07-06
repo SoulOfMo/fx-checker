@@ -1,4 +1,4 @@
-import Calculator from "./_components/Calculator";
+import ContentContainer from "./_components/ContentContainer";
 import Header from "./_components/Header";
 import Marquee from "./_components/Marquee";
 
@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <Header />
       <Marquee />
-      <Calculator />
+      <ContentContainer />
     </main>
   );
 }

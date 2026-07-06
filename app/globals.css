@@ -31,8 +31,8 @@
   --color-red-500: #ff4141;
 
   --text-xxs: 0.625rem;
+  --text-normal: 1rem;
 
-  --breakpoint-phone: 25rem;
   --radius-8: 8px;
   --radius-10: 10px;
   --radius-12: 12px;
@@ -40,6 +40,12 @@
   --radius-20: 20px;
   --radius-24: 24px;
   --radius-full: 999px;
+
+  --breakpoint-phone: 25rem;
+  --breakpoint-laptop: 90rem;
+
+  --tracking-normal: 1px;
+  --tracking-small: 0.5px;
 
   --animate-marquee: marquee 35s linear infinite;
 

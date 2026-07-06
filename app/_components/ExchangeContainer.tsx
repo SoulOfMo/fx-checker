@@ -1,13 +1,8 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { exchangeProps } from "@/types/fx";
 
 import carretDown from "@/public/images/icon-chevron-down.svg";
 
-interface exchangeProps {
-  flag: StaticImageData;
-  amount: number;
-  type: string;
-  code: string;
-}
 export default function ExchangeContainer({
   flag,
   amount,
@@ -15,7 +10,7 @@ export default function ExchangeContainer({
   code,
 }: exchangeProps) {
   return (
-    <div className="bg-neutral-600 p-4 xl:p-5 rounded-16 border border-neutral-500 flex flex-col gap-4 xl:gap-5 md:w-73 xl:w-112.5">
+    <div className="bg-neutral-600 p-4 xl:p-5 rounded-16 border border-neutral-500 flex flex-col md:p-5 gap-4 xl:gap-6 md:w-73  xl:w-112.5 ">
       <p className="uppercase text-neutral-100 text-sm">{type}</p>
       <div className="flex justify-between xl:items-center xl:h-10.25">
         <p
