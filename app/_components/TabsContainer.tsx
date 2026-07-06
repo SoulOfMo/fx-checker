@@ -16,6 +16,9 @@ export default function TabsContainer() {
           History
         </button>
         <button className=" flex gap-2 items-center uppercase border-0 sm:h-10.5 px-4 py-[10.5px] text-neutral-50 text-normal focus:border-b border-lime-500">
+          <span className="tracking-normal">compare</span>
+        </button>
+        <button className=" flex gap-2 items-center uppercase border-0 sm:h-10.5 px-4 py-[10.5px] text-neutral-50 text-normal focus:border-b border-lime-500">
           <span className="tracking-normal">FAVORITES</span>
           <span className=" flex items-center justify-center w-5 h-5 bg-lime-800 text-lime-500 text-xxs rounded-full">
             10
