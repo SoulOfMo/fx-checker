@@ -27,27 +27,3 @@ export default function Logs() {
     </div>
   );
 }
-
-/* Clear Button */
-
-/* Chart Date Info */
-
-// width: 69px;
-// height: 14px;
-
-// /* text-preset-5 */
-// font-family: 'JetBrains Mono';
-// font-style: normal;
-// font-weight: 400;
-// font-size: 12px;
-// line-height: 120%;
-// /* or 14px */
-// text-align: center;
-// letter-spacing: 0.5px;
-
-// color: #9D9D9D;
-
-// /* Inside auto layout */
-// flex: none;
-// order: 0;
-// flex-grow: 0;

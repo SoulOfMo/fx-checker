@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import arrowRight from "@/public/images/icon-arrow-right.svg";
-import StarIcon from "./StarIcon";
+import StarIcon from "../../components/StarIcon";
 import { FavPairProps } from "@/types/fx";
 
 export default function FavPair({

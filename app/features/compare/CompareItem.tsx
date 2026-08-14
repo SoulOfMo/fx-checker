@@ -1,6 +1,6 @@
 import Image from "next/image";
 import USAflag from "@/public/images/flags/us.webp";
-import StarIcon from "./StarIcon";
+import StarIcon from "../../components/StarIcon";
 
 export default function CompareItem() {
   return (

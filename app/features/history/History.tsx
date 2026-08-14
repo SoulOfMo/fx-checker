@@ -1,5 +1,5 @@
 import Chart from "./Chart";
-import Stat from "./Stat";
+import Stat from "../../components/Stat";
 
 export default function History() {
   return (

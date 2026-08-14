@@ -1,6 +1,6 @@
-import ContentContainer from "./_components/ContentContainer";
-import Header from "./_components/Header";
-import Marquee from "./_components/Marquee";
+import ContentContainer from "./components/ContentContainer";
+import Header from "./components/Header";
+import Marquee from "./components/Marquee";
 
 export default function Home() {
   return (
