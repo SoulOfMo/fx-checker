@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { getCurrencies } from '../api/data';
-import { CurrrencyProp } from '@/types/fx';
+import { CurrencyProp } from '@/types/fx';
 import { POPULAR_CURRENCIES } from '../utils/constants';
 
 const popularSet = new Set(POPULAR_CURRENCIES);
@@ -9,11 +9,11 @@ export default function useCurrencies() {
   return useQuery({
     queryKey: ['currency'],
     queryFn: getCurrencies,
-    select: (data: CurrrencyProp[]) => {
+    select: (data: CurrencyProp[]) => {
       const groupedCurrencies = data.reduce(
         (
-          acc: { popular: CurrrencyProp[]; others: CurrrencyProp[] },
-          curItem: CurrrencyProp
+          acc: { popular: CurrencyProp[]; others: CurrencyProp[] },
+          curItem: CurrencyProp
         ) => {
           if (popularSet.has(curItem.iso_code)) {
             acc.popular.push(curItem);

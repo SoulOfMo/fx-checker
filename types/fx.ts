@@ -28,7 +28,7 @@ export type Rate = {
   rate: number;
 };
 
-export type CurrrencyProp = {
+export type CurrencyProp = {
   iso_code: string;
   iso_numeric?: string;
   name: string;
