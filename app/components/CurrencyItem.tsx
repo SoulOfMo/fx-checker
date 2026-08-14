@@ -1,5 +1,5 @@
 import checkedIcon from '@/public/images/icon-check.svg';
-import { CurrrencyProp } from '@/types/fx';
+import { CurrencyProp } from '@/types/fx';
 import Image from 'next/image';
 import cleanCountryCode from '../libs/cleanCountryCode';
 
@@ -8,7 +8,7 @@ export default function CurrencyItem({
   name,
   active,
   onClick,
-}: CurrrencyProp) {
+}: CurrencyProp) {
   const twoLetterCode = cleanCountryCode(code);
 
   return (

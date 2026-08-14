@@ -1,8 +1,8 @@
-import { CurrrencyProp } from '@/types/fx';
+import { CurrencyProp } from '@/types/fx';
 import CurrencyItem from './CurrencyItem';
 
 interface CurrencyPickerProps {
-  currencies?: CurrrencyProp[];
+  currencies?: CurrencyProp[];
   changeCurrency: (value: string) => void;
   activeCurrency: string;
   setOpen: (arg0: boolean) => void;
@@ -22,7 +22,7 @@ export default function CurrenciesGroup({
       </div>
 
       <div className="picker-scroll flex h-46 flex-col overflow-y-auto">
-        {currencies?.map((curitem: CurrrencyProp) => (
+        {currencies?.map((curitem: CurrencyProp) => (
           <CurrencyItem
             key={`pop-${curitem.iso_code}`}
             iso_code={curitem.iso_code}
