@@ -1,13 +1,6 @@
 import { StaticImageData } from 'next/image';
 
 export interface exchangeProps {
-  amount?: number;
-  type: string;
-  code: string;
-  sendValue?: number | string;
-  sendCurrency: string;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSendCurrency: (value: string) => void;
   isPending: boolean;
 }
 
