@@ -52,7 +52,9 @@ function FxCheckerProvider({ children }: { children: ReactNode }) {
 function useFxCheckerContext() {
   const context = useContext(fxCheckerContext);
   if (context === null) {
-    console.log('Context is used outside the defined route');
+    throw new Error(
+      'useFxCheckerContext must be used within FxCheckerProvider'
+    );
   }
 
   return context;
