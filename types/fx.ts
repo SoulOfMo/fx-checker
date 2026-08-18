@@ -28,8 +28,6 @@ export type CurrencyProp = {
   active?: boolean;
   onClick?: () => void;
 };
-// {iso_code: 'AED', iso_numeric: '784', name: 'United Arab Emirates Dirham', symbol: 'د.إ', start_date: '1996-04-11', …}
-
 export interface StatProps {
   className?: string;
 }

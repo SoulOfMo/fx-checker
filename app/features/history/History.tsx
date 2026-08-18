@@ -1,34 +1,34 @@
-import Chart from "./Chart";
-import Stat from "../../components/Stat";
+import Chart from './Chart';
+import Stat from '../../components/Stat';
 
 export default function History() {
   return (
-    <div className=" flex flex-col gap-5 ">
-      <div className="flex items-start gap-5 flex-col laptop:gap-0 laptop:flex-row lg:justify-between laptop:items-center">
-        <div className="w-full grid grid-cols-2 sm:grid-cols-4 sm:w-auto gap-2.5">
+    <div className="flex flex-col gap-5">
+      <div className="laptop:gap-0 laptop:flex-row laptop:items-center flex flex-col items-start gap-5 lg:justify-between">
+        <div className="grid w-full grid-cols-2 gap-2.5 sm:w-auto sm:grid-cols-4">
           <Stat />
           <Stat />
           <Stat className="text-green-500" />
           <Stat className="text-green-500" />
         </div>
 
-        <div className="flex rounded-8 bg-neutral-700 p-0.5 h-10.5">
-          <span className=" w-11.75 h-9.5 flex items-center justify-center px-4 py-3 border-0 text-neutral-200 uppercase text-xs">
+        <div className="rounded-8 flex h-10.5 bg-neutral-700 p-0.5">
+          <span className="flex h-9.5 w-11.75 items-center justify-center border-0 px-4 py-3 text-xs text-neutral-200 uppercase">
             1D
           </span>
-          <span className=" w-11.75 h-9.5 flex items-center justify-center px-4 py-3 border-0 text-neutral-200 uppercase text-xs">
+          <span className="flex h-9.5 w-11.75 items-center justify-center border-0 px-4 py-3 text-xs text-neutral-200 uppercase">
             1W
           </span>
-          <span className=" w-11.75 h-9.5 flex items-center justify-center px-4 py-3 border-0 text-neutral-200 uppercase text-xs">
+          <span className="flex h-9.5 w-11.75 items-center justify-center border-0 px-4 py-3 text-xs text-neutral-200 uppercase">
             1M
           </span>
-          <span className=" w-11.75 h-9.5 flex items-center hover:bg-neutral-500 hover:rounded-8 justify-center px-4 py-3 border-0 text-neutral-200 uppercase text-xs">
+          <span className="hover:rounded-8 flex h-9.5 w-11.75 items-center justify-center border-0 px-4 py-3 text-xs text-neutral-200 uppercase hover:bg-neutral-500">
             3M
           </span>
-          <span className=" w-11.75 h-9.5 flex items-center justify-center px-4 py-3 border-0 text-neutral-200 uppercase text-xs">
+          <span className="flex h-9.5 w-11.75 items-center justify-center border-0 px-4 py-3 text-xs text-neutral-200 uppercase">
             1Y
           </span>
-          <span className=" w-11.75 h-9.5 flex items-center justify-center px-4 py-3 border-0 text-neutral-200 uppercase text-xs">
+          <span className="flex h-9.5 w-11.75 items-center justify-center border-0 px-4 py-3 text-xs text-neutral-200 uppercase">
             5Y
           </span>
         </div>
@@ -38,27 +38,3 @@ export default function History() {
     </div>
   );
 }
-
-/* Open Label */
-
-// width: 70px;
-// height: 17px;
-
-// /* text-preset-4 */
-// font-family: 'JetBrains Mono';
-// font-style: normal;
-// font-weight: 400;
-// font-size: 14px;
-// line-height: 120%;
-// /* identical to box height, or 17px */
-// letter-spacing: 1px;
-
-// color: #FFFFFF;
-
-// opacity: 0.7;
-
-// /* Inside auto layout */
-// flex: none;
-// order: 0;
-// align-self: stretch;
-// flex-grow: 0;
