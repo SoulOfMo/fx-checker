@@ -4,16 +4,19 @@ import carretDown from '@/public/images/icon-chevron-down.svg';
 import cleanCountryCode from '../libs/cleanCountryCode';
 import { useDropdown } from '../hooks/useDropdown';
 import CurrencyPicker from './CurrencyPicker';
+import { useFxCheckerContext } from '../providers/FxCheckerProvider';
 
 export default function ReceiveContainer({
   convertedValue,
-  receiveCurrency,
-  changeReceiveCurrency,
 }: {
   convertedValue: number;
-  receiveCurrency: string;
-  changeReceiveCurrency: (value: string) => void;
 }) {
+  const { receiveCurrency, setReceiveCurrency } = useFxCheckerContext();
+
+  function changeReceiveCurrency(value: string) {
+    setReceiveCurrency(value);
+  }
+
   const twoLetterCode = cleanCountryCode(receiveCurrency);
   const { open, setOpen, ref } = useDropdown<HTMLDivElement>();
 
@@ -38,13 +41,12 @@ export default function ReceiveContainer({
           onClick={() => toggle()}
           className="rounded-8 .recieved flex items-center gap-2 border border-neutral-400 bg-neutral-500 p-2.5 xl:h-10 xl:w-24"
         >
-          <span>
+          <span className="relative h-5 w-5 overflow-hidden rounded-full">
             <Image
               src={`https://flagcdn.com/w40/${twoLetterCode}.png`}
-              width={20}
-              height={20}
+              fill
+              sizes="20px"
               alt="country flag"
-              className="h-5 w-5 rounded-full"
             />
           </span>
           <span className={`text-sm tracking-normal uppercase`}>

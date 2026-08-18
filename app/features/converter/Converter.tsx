@@ -1,42 +1,28 @@
 'use client';
 
-import { useState } from 'react';
-
-import ExchangeContainer from './ExchangeContainer';
+import SendContainer from '../../components/SendContainer';
 import SwapButton from '../../components/SwapButton';
 import StarIcon from '../../components/StarIcon';
 
 import { useExchangeRate } from '@/app/hooks/useExchangeRate';
 
 import ReceiveContainer from '@/app/components/ReceiveContainer';
-import { useFxCheckerContext } from '@/app/providers/CurrencyProvider';
+import { useFxCheckerContext } from '@/app/providers/FxCheckerProvider';
 
 export default function Converter() {
-  const [value, setValue] = useState<string>('');
-  const [sendCurrency, setSendCurrency] = useState<string>('USD');
-  const [receiveCurrency, setReceiveCurrency] = useState<string>('EUR');
-
-  const { amount } = useFxCheckerContext();
-
-  console.log(amount);
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const cleanInput = e.target.value.replace(/[^0-9.]/g, '');
-    setValue(cleanInput);
-  }
-
-  function handleSendCurrency(value: string) {
-    setSendCurrency(value);
-  }
-
-  function changeReceiveCurrency(value: string) {
-    setReceiveCurrency(value);
-  }
+  const {
+    amount,
+    setAmount,
+    sendCurrency,
+    setSendCurrency,
+    receiveCurrency,
+    setReceiveCurrency,
+  } = useFxCheckerContext();
 
   const { data, isPending } = useExchangeRate({
     sendCur: sendCurrency,
     receiveCur: receiveCurrency,
-    value: Number(value) || 0,
+    value: Number(amount) || 0,
   });
 
   const { currentRate, convertedValue } = data || {
@@ -48,7 +34,7 @@ export default function Converter() {
     const temp = sendCurrency;
     setSendCurrency(receiveCurrency);
     setReceiveCurrency(temp);
-    setValue(convertedValue?.toFixed(2).toString());
+    setAmount(convertedValue?.toFixed(2).toString());
   }
 
   return (
@@ -57,25 +43,13 @@ export default function Converter() {
 
       <div className="rounded-20 mt-4 flex flex-col bg-neutral-700 sm:justify-between md:items-center">
         <div className="m-4 flex flex-col justify-between sm:gap-6 md:flex-row md:items-center xl:m-5">
-          <ExchangeContainer
-            sendValue={value}
-            handleChange={handleChange}
-            type="send"
-            code={sendCurrency}
-            sendCurrency={sendCurrency}
-            handleSendCurrency={handleSendCurrency}
-            isPending={isPending}
-          />
+          <SendContainer isPending={isPending} />
 
           <SwapButton onClick={handleSwap} />
 
           {/* Recieve Container */}
 
-          <ReceiveContainer
-            receiveCurrency={receiveCurrency}
-            convertedValue={convertedValue}
-            changeReceiveCurrency={changeReceiveCurrency}
-          />
+          <ReceiveContainer convertedValue={convertedValue} />
         </div>
 
         <div className="mx-auto flex w-full flex-col items-center justify-center gap-4 border-t border-dashed border-neutral-500 p-4 md:flex-row md:justify-between">
