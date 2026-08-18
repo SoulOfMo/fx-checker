@@ -9,11 +9,16 @@ import StarIcon from '../../components/StarIcon';
 import { useExchangeRate } from '@/app/hooks/useExchangeRate';
 
 import ReceiveContainer from '@/app/components/ReceiveContainer';
+import { useFxCheckerContext } from '@/app/providers/CurrencyProvider';
 
 export default function Converter() {
   const [value, setValue] = useState<string>('');
   const [sendCurrency, setSendCurrency] = useState<string>('USD');
   const [receiveCurrency, setReceiveCurrency] = useState<string>('EUR');
+
+  const { amount } = useFxCheckerContext();
+
+  console.log(amount);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const cleanInput = e.target.value.replace(/[^0-9.]/g, '');

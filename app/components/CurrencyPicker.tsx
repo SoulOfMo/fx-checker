@@ -51,7 +51,13 @@ export default function CurrencyPicker({
       {/* Search Container */}
       <div className="flex h-11.5 items-center gap-2.5 rounded-md border border-neutral-200 p-3">
         <span className="flex h-5 w-3.75 items-center justify-center">
-          <Image src={searchIcon} width={16} height={16} alt="search icon" />
+          <Image
+            src={searchIcon}
+            width={16}
+            height={16}
+            alt="search icon"
+            loading="lazy"
+          />
         </span>
         <input
           type="text"

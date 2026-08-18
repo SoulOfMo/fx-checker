@@ -11,18 +11,18 @@ export function useDropdown<T extends HTMLElement>() {
       }
     }
 
-    function handleScroll(event: Event) {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    }
+    // function handleScroll(event: Event) {
+    //   if (ref.current && !ref.current.contains(event.target as Node)) {
+    //     setOpen(false);
+    //   }
+    // }
 
     document.addEventListener('mousedown', handleClickOutside);
-    window.addEventListener('scroll', handleScroll, true);
+    // window.addEventListener('scroll', handleScroll, true);
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll, true);
+      // window.removeEventListener('scroll', handleScroll, true);
     };
   }, []);
 

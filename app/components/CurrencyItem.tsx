@@ -24,6 +24,7 @@ export default function CurrencyItem({
           width={20}
           height={80}
           loading="lazy"
+
           alt="country icon"
         />
 
