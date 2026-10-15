@@ -7,7 +7,7 @@ import Logs from '../features/logs/Logs';
 import TabsContainer from './TabsContainer';
 
 export default function DetailsContainer() {
-  const [activeTab, setActiveTab] = useState<string>('History');
+  const [activeTab, setActiveTab] = useState<string>('history');
 
   function handleChange(value: string) {
     setActiveTab(value);

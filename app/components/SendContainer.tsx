@@ -38,6 +38,7 @@ export default function SendContainer({ isPending }: exchangeProps) {
           value={amount === '0.00' ? '0' : amount}
           type="text"
           placeholder="0"
+
           onChange={handleChange}
           className={`w-full text-[32px] transition-all duration-300 ease-out focus:outline-0 xl:text-[40px] ${amount === '0' ? 'text-neutral-200' : 'text-neutral-50'} ${isPending ? 'opacity-40 blur-[1px]' : 'blur-0 opacity-100'}`}
         />

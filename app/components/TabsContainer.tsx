@@ -17,14 +17,14 @@ export default function TabsContainer({
       {/* DESKTOP */}
       <div className="hidden w-full gap-2 border-b border-neutral-600 sm:flex">
         <button
-          className="text-normal border-0 border-lime-500 px-4 py-[10.5px] tracking-normal text-neutral-50 uppercase focus:border-b sm:h-10.5"
+          className={`${activeTab === 'history' ? 'border-b border-lime-500' : 'border-0'} text-normal border-0 border-lime-500 px-4 py-[10.5px] tracking-normal text-neutral-50 uppercase focus:border-b sm:h-10.5`}
           onClick={() => handleChange('history')}
         >
           History
         </button>
 
         <button
-          className="text-normal flex items-center gap-2 border-0 border-lime-500 px-4 py-[10.5px] text-neutral-50 uppercase hover:border-b sm:h-10.5"
+          className={`${activeTab === 'compare' ? 'border-b border-lime-500' : 'border-0'} text-normal flex items-center gap-2 border-0 border-lime-500 px-4 py-[10.5px] text-neutral-50 uppercase hover:border-b sm:h-10.5`}
           onClick={() => handleChange('compare')}
         >
           <span className="tracking-normal">compare</span>
@@ -41,7 +41,7 @@ export default function TabsContainer({
         </button>
 
         <button
-          className="text-normal flex items-center gap-2 border-0 border-lime-500 px-4 py-[10.5px] text-neutral-50 uppercase focus:border-b sm:h-10.5"
+          className={`${activeTab === 'log' ? 'border-b border-lime-500' : 'border-0'} text-normal flex items-center gap-2 border-0 border-lime-500 px-4 py-[10.5px] text-neutral-50 uppercase focus:border-b sm:h-10.5`}
           onClick={() => handleChange('log')}
         >
           <span className="tracking-normal">log</span>
