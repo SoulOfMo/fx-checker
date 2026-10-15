@@ -18,18 +18,10 @@ type FxCheckerContextType = {
   receiveCurrency: string;
 };
 
-// const initialState = {
-//   favs: [],
-//   amount: '',
-//   sendCurrency: '',
-//   receiveCurrency: '',
-//   logs: '',
-// };
-
 const fxCheckerContext = createContext<FxCheckerContextType | null>(null);
 
 function FxCheckerProvider({ children }: { children: ReactNode }) {
-  const [amount, setAmount] = useState<string>('100');
+  const [amount, setAmount] = useState<string>('');
   const [sendCurrency, setSendCurrency] = useState<string>('USD');
   const [receiveCurrency, setReceiveCurrency] = useState<string>('EUR');
 

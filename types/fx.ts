@@ -28,8 +28,13 @@ export type CurrencyProp = {
   active?: boolean;
   onClick?: () => void;
 };
+
 export interface StatProps {
   className?: string;
+  type: string;
+  value?: number;
+  percentChange?: string;
+  isPending?: boolean;
 }
 
 export interface compareProps {
@@ -39,6 +44,14 @@ export interface compareProps {
   name: string;
   rate: number;
   amount: number;
+}
+
+export interface CompareItemProps {
+  currency?: string;
+  name: string;
+  rate: number;
+  amount: number;
+  quote?: string;
 }
 
 export interface FavPairProps {
@@ -65,4 +78,10 @@ export interface tickerProps {
 export interface TabsContainerProps {
   handleChange: (value: string) => void;
   activeTab: string;
+}
+
+export interface FormattedRate {
+  date: string;
+  fullDate: string;
+  rate: number;
 }
