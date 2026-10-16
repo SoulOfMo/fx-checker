@@ -1,13 +1,15 @@
 import Image from 'next/image';
+import { CompareItemProps } from '@/types/fx';
 import StarIcon from '../../components/StarIcon';
 import cleanCountryCode from '@/app/libs/cleanCountryCode';
 
 export default function CompareItem({
-  item,
-}: {
-  item: { quote: string; name: string; amount: number; rate: number };
-}) {
-  const twoLetterCode = cleanCountryCode(item.quote);
+  rate,
+  quote,
+  name,
+  amount,
+}: CompareItemProps) {
+  const twoLetterCode = cleanCountryCode(quote);
 
   return (
     <div className="rounded-10 flex items-center justify-between gap-2.5 border border-neutral-500 bg-neutral-600 p-3 sm:px-4">
@@ -25,10 +27,10 @@ export default function CompareItem({
         </span>
         <div className="flex flex-col gap-1.5">
           <span className="h-4.25 text-sm tracking-normal text-neutral-50 uppercase">
-            {item.quote}
+            {quote}
           </span>
           <span className="tracking-small h-3.5 text-xs text-neutral-200">
-            {item.name}
+            {name}
           </span>
         </div>
       </div>
@@ -37,10 +39,10 @@ export default function CompareItem({
       <div className="flex items-center gap-2.5 sm:gap-5">
         <div className="flex flex-col items-end gap-1.5">
           <span className="text-normal h-4.75 tracking-normal text-neutral-50">
-            {item.amount.toFixed(2)}
+            {amount.toFixed(2)}
           </span>
           <span className="text-xxs item-end h-2.5 tracking-normal text-neutral-200">
-            @ {item.rate.toFixed(4)}
+            @ {rate.toFixed(4)}
           </span>
         </div>
 

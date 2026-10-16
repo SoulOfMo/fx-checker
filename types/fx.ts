@@ -12,22 +12,27 @@ export interface IconProps {
   className?: string;
 }
 
-//Difference between type and interface
-
-export type Rate = {
+export interface Rate {
   date: string;
   base: string;
   quote: string;
   rate: number;
-};
+}
 
-export type CurrencyProp = {
+export interface CurrencyProp {
   iso_code: string;
   iso_numeric?: string;
   name: string;
   active?: boolean;
   onClick?: () => void;
-};
+}
+
+export interface CurrencyPickerProps {
+  currencies?: CurrencyProp[];
+  changeCurrency: (value: string) => void;
+  activeCurrency: string;
+  setOpen: (arg0: boolean) => void;
+}
 
 export interface StatProps {
   className?: string;
@@ -47,11 +52,10 @@ export interface compareProps {
 }
 
 export interface CompareItemProps {
-  currency?: string;
-  name: string;
   rate: number;
+  quote: string;
+  name: string;
   amount: number;
-  quote?: string;
 }
 
 export interface FavPairProps {

@@ -4,15 +4,6 @@ const BASE_URL = 'https://api.frankfurter.dev/v2/';
 
 import { yesterday } from '../utils/constants';
 
-export async function getData() {
-  const data = await fetch(BASE_URL);
-
-  const results = await data.json();
-
-  return results;
-}
-
-// https://api.frankfurter.dev/v2/currencies
 export async function getCurrencies() {
   const res = await fetch(`${BASE_URL}currencies`);
   const data = await res.json();
@@ -24,14 +15,20 @@ export async function getCurrencies() {
   return data;
 }
 
+//The latest exchange rates for a given base currency
+
 export async function getLatestRates({ base = 'USD' }: { base?: string } = {}) {
   const res = await fetch(`${BASE_URL}rates?base=${base}`);
   const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || 'Failed to fetch latest rates');
+  }
+
   return data;
-  console.log('getLatestRates data:', data);
 }
 
-// https://api.frankfurter.dev/v2/rate/EUR/USD
+// The exchange rate btw two currencies
 
 export async function getExchangeRate({
   sendCur = 'USD',
@@ -44,10 +41,12 @@ export async function getExchangeRate({
     `${BASE_URL}rates?base=${sendCur}&quotes=${receiveCur}`
   );
   const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data.message || 'Failed to fetch exchange rate');
+  }
   return data;
 }
 
-/* https://api.frankfurter.dev/v2/rates?from=2026-01-01&quotes=USD */
 export async function getHistory({
   sendCur = 'USD',
   receiveCur = 'EUR',

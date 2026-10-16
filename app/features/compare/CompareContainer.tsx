@@ -21,7 +21,13 @@ export default function CompareContainer() {
 
       <div className="flex flex-col gap-3">
         {data?.slice(0, 8).map((item: CompareItemProps) => (
-          <CompareItem key={item.quote} item={item} />
+          <CompareItem
+            key={item.quote}
+            rate={item.rate}
+            quote={item.quote}
+            name={item.name}
+            amount={item.amount}
+          />
         ))}
       </div>
     </div>
