@@ -1,12 +1,5 @@
-import { CurrencyProp } from '@/types/fx';
+import { CurrencyProp, CurrencyPickerProps } from '@/types/fx';
 import CurrencyItem from './CurrencyItem';
-
-interface CurrencyPickerProps {
-  currencies?: CurrencyProp[];
-  changeCurrency: (value: string) => void;
-  activeCurrency: string;
-  setOpen: (arg0: boolean) => void;
-}
 
 export default function PopularCurrencies({
   currencies,
@@ -14,6 +7,7 @@ export default function PopularCurrencies({
   setOpen,
   activeCurrency,
 }: CurrencyPickerProps) {
+  console.log(currencies);
   return (
     <>
       <div className="flex justify-between gap-2.5 border-b border-neutral-500 py-2 text-xs font-medium text-neutral-200">
